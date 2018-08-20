@@ -1,0 +1,22 @@
+{
+  "name": "dpauli/github-release-reminder",
+  "description": "Crawl GitHub repositories to get informed about new versions.",
+  "type": "library",
+  "homepage": "https://github.com/dpauli/php-github-release-reminder",
+  "readme": "README.md",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1.0",
+    "dpauli/graphql-request-builder": "1.*",
+    "guzzlehttp/guzzle": "6.3.*",
+    "psr/http-message": "1.0.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "GhRelease\\": "src/"
+    }
+  }
+}
