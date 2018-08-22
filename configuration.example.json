@@ -1,0 +1,9 @@
+{
+  "ghrelease": {
+    "connection": {
+      "client": {
+        "token" : "<sampleToken>"
+      }
+    }
+  }
+}
