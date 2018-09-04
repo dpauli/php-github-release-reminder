@@ -14,19 +14,24 @@ use PHPUnit\Framework\TestCase;
  */
 class ClientTest extends TestCase
 {
+    private const RELEASE_OWNER = 'dpauli';
+    private const RELEASE_NAME = 'php-graphql-request-builder';
+
     public function testNoConfiguration(): void
     {
         $client = new Client();
         $this->expectException(NotConfiguredException::class);
 
-        $client->authorize();
+        $client->latestReleases(self::RELEASE_OWNER, self::RELEASE_NAME);
     }
 
-    public function testAuthenticate(): void
+    public function testLatestRelease(): void
     {
         $client = new Client();
         $client->configure();
 
-        $client->authorize();
+        $latestVersion = $client->latestReleases(self::RELEASE_OWNER, self::RELEASE_NAME);
+
+        static::assertNotNull($latestVersion, 'There is a latest version.');
     }
 }
